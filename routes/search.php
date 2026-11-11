@@ -6,9 +6,10 @@ $app->get('/search', function ($request, $response, $args) {
 
     $keyword = isset($request->getQueryParams()['keyword']) ? $request->getQueryParams()['keyword'] : null;
     $language = isset($request->getQueryParams()['language']) ? $request->getQueryParams()['language'] : null;
-    $edition = isset($request->getQueryParams()['edition']) ? $request->getQueryParams()['language'] : null;
-    $surah = isset($request->getQueryParams()['surah']) ? $request->getQueryParams()['language'] : null;
+    $edition = isset($request->getQueryParams()['edition']) ? $request->getQueryParams()['edition'] : null;
+    $surah = isset($request->getQueryParams()['surah']) ? $request->getQueryParams()['surah'] : null;
     $res = [];
+    $results = [];
     if ($keyword !== null && $keyword != '') {
         if ($surah !== null) {
             foreach ( (array) $surah as $s) {

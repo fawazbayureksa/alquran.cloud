@@ -12,7 +12,7 @@ This is the code you see deployed on https://alquran.cloud. This documentation e
 to deploy your own instance and contribute code.
 
 ## Technology Stack and Requirements
-* PHP 8.1
+* PHP 8.4
 * Composer - See composer.json for other dependencies
 * Slim Framework 4
 * Bootstrap 3
@@ -40,7 +40,7 @@ You can now visit http://localhost:8081/ and start using it.
 
 ### Build and Contribute
 
-**Please note that the Dockerfile included builds a production ready container which has opcache switched on and xdebug turned off, so you will only see your changes every 5 minutes if you are developing. To actively develop, change the ```FROM vesica/php72:latest``` line to ```vesica/php72:dev```.**
+**Please note that the Dockerfile included builds a production ready container which has opcache switched on and xdebug turned off, so you will only see your changes every 5 minutes if you are developing. To actively develop, change the ```FROM ghcr.io/islamic-network/php:8.4-apache``` line to ```FROM ghcr.io/islamic-network/php:8.4-apache-dev```.**
 
 1. Clone this repository
 2. Run ```docker build . -t ghcr.io/islamic-network/alquran.cloud```. This will build an image with production dependencies only.
@@ -63,4 +63,3 @@ You can contribute code by raising a pull request.
 There's a backlog of stuff under issues for things that potentially need to be worked on, so please feel free to pick something up from there or contribute your own improvements.
 
 You can also join the community at https://community.islamic.network/ or the Islamic Network Discord Server to discuss any of the apps or APIs @ https://discord.gg/FwUy69M.
-

@@ -7,9 +7,9 @@ class Ayah
 {
     public static function renderAyahEndingInArabic($number)
     {
-		if (strlen($number) == 2) {
+		if (strlen((string) $number) == 2) {
 			$ayahNumber = 'ayah-number-2digit';
-		} else if (strlen($number) == 3) {
+		} else if (strlen((string) $number) == 3) {
 			$ayahNumber = 'ayah-number-3digit';
 		} else {
 			$ayahNumber = 'ayah-number';

@@ -79,7 +79,7 @@
 </div>
 </div>
 </div>
-<?php if ($dualAudio == 'true') { ?>
+<?php if (isset($dualAudio) && $dualAudio == 'true') { ?>
 <script src="/public/js/jquery.mediaplayer-ar-en.js?v=27"></script>
 <?php } else { ?>
 <script src="/public/js/jquery.mediaplayer.js?v=27"></script>

@@ -3,7 +3,7 @@
 <?php // ================================================================ // ?>
 <link href="/public/css/tajweed.css" rel="stylesheet">
 <?php
-$json = json_decode(file_get_contents('../vendor/alquran/tools/data/tajweed.json'));
+$json = json_decode(file_get_contents(__DIR__ . '/../vendor/alquran/tools/data/tajweed.json'));
 $text = $json->data->text;
 $parser = new AlQuranCloud\Tools\Parser\Tajweed();
 ?>

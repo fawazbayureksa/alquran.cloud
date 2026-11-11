@@ -31,16 +31,19 @@ class Generic
     {
         $l = self::getLanguages();
         
-        return $l[$code];
+        return $l[$code] ?? $code;
     }
     
     public static function getLanguages()
     {
         $a = [
+            "am" => "Amharic",
             "ar" => "Arabic",
             "az" => "Azerbaijani",
             "ba" => "Bashkir",
+            "ber" => "Amazigh",
             "bn" => "Bengali",
+            "ce" => "Chechen",
             "cs" => "Czech",
             "de" => "German",
             "dv" => "Divehi / Maldivian",
@@ -53,6 +56,7 @@ class Generic
             "id" => "Indonesian",
             "it" => "Italian",
             "ja" => "Japanese",
+            "kk" => "Kazakh",
             "ko" => "Korean",
             "ku" => "Kurdish",
             "ml" => "Malayalam",
@@ -60,6 +64,7 @@ class Generic
             "nl" => "Dutch",
             "no" => "Norwegiwn",
             "pl" => "Polish",
+            "ps" => "Pashto",
             "pt" => "Portuguese",
             "ro" => "Romanian",
             "ru" => "Russian",
@@ -94,7 +99,7 @@ class Generic
         $result = [];
         foreach ($editions as $edition) {
             //if ($edition->type != 'quran') {
-                $edition->languageName = $languages[$edition->language];
+                $edition->languageName = $languages[$edition->language] ?? $edition->language;
                 $result[$edition->languageName][] = $edition;
             //}
         }
@@ -108,7 +113,7 @@ class Generic
         $result = [];
         foreach ($editions as $edition) {
             if ($edition->type == 'quran') {
-                $edition->languageName = $languages[$edition->language];
+                $edition->languageName = $languages[$edition->language] ?? $edition->language;
                 $result[$edition->languageName][] = $edition;
             }
         }

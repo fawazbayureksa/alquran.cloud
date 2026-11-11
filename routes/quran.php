@@ -35,6 +35,7 @@ $app->get('/quran/{edition}', function ($request, $response, $args) {
 		'quran' => $this->get('client')->AlQuranCloudApi->quran('quran-uthmani-quran-academy'),
 		'suwar' => $this->get('client')->AlQuranCloudApi->surahs(),
 		'quranEdition' => $this->get('client')->AlQuranCloudApi->quran($edition),
+		'dualAudio' => isset($request->getQueryParams()['dualAudio']) ? $request->getQueryParams()['dualAudio'] : false,
 		'editions' => [
 			'editions' => $this->get('client')->AlQuranCloudApi->editions(null, null, 'text'),
 		],
